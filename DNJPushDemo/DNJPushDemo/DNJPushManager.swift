@@ -40,16 +40,11 @@ class DNJPushManager: NSObject {
     
     // MARK: 设置标签
     func setTags(tags: Set<AnyHashable>!, alias: String!, object: Any!, callBack: @escaping TagBlock) {
-        JPUSHService.setTags(tags, alias: alias, callbackSelector: #selector(self.tagsAliasCallback(_:tags:alias:)), object: object)
-        onTagBlock = callBack
-    }
-    
-    func tagsAliasCallback(_ iResCode: Int, tags: Set<AnyHashable>!, alias: String!) {
-        guard onTagBlock == nil else {
-            return
+        JPUSHService.setTags(tags, alias: alias) { (iResCode, tags, alias) in
+            let res = iResCode == 0 ? true : false
+            self.onTagBlock!(res, tags!, alias!)
         }
-        let res = iResCode == 0 ? true : false
-        self.onTagBlock!(res, tags, alias)
+        onTagBlock = callBack
     }
     
     // MARK: 设置Badge值,存储在JPush服务器上

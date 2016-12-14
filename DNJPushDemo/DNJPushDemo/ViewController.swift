@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         
         DNJPushManager.shared.myDelegate = self
         
-       
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -30,6 +29,10 @@ class ViewController: UIViewController {
         DNJPushManager.shared.setTags(tags: ["10001"], alias: "dn", object: self) { (res, tags, alias) in
             print(res, tags, alias)
         }
+    }
+    
+    @objc func ddd() {
+        
     }
     
 
