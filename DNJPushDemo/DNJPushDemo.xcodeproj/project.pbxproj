@@ -55,8 +55,8 @@
 		519EB9171DFFD27B003527FD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		519EB9191DFFD289003527FD /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		519EB91B1DFFD3C9003527FD /* DNJPushDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNJPushDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		519EB91F1DFFE4EF003527FD /* DNJPushExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNJPushExtension.swift; sourceTree = "<group>"; };
-		519EB9211DFFEE2A003527FD /* DNJPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNJPushManager.swift; sourceTree = "<group>"; };
+		519EB91F1DFFE4EF003527FD /* DNJPushExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DNJPushExtension.swift; path = DNJPushDemo/DNJPushExtension.swift; sourceTree = SOURCE_ROOT; };
+		519EB9211DFFEE2A003527FD /* DNJPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DNJPushManager.swift; path = DNJPushDemo/DNJPushManager.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +106,6 @@
 				519EB8FD1DFFD1AD003527FD /* DNJPushDemo.entitlements */,
 				519EB8FC1DFFD19D003527FD /* DNJPush */,
 				519EB8E91DFFC9F0003527FD /* AppDelegate.swift */,
-				519EB91F1DFFE4EF003527FD /* DNJPushExtension.swift */,
-				519EB9211DFFEE2A003527FD /* DNJPushManager.swift */,
 				519EB8EB1DFFC9F0003527FD /* ViewController.swift */,
 				517EB1231E00D84100E764A8 /* DNPushViewController.swift */,
 				519EB8FB1DFFC9F6003527FD /* Other */,
@@ -130,6 +128,8 @@
 		519EB8FC1DFFD19D003527FD /* DNJPush */ = {
 			isa = PBXGroup;
 			children = (
+				519EB91F1DFFE4EF003527FD /* DNJPushExtension.swift */,
+				519EB9211DFFEE2A003527FD /* DNJPushManager.swift */,
 				519EB8FE1DFFD1FC003527FD /* Lib */,
 			);
 			path = DNJPush;
