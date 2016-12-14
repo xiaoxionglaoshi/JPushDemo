@@ -13,22 +13,23 @@ class ViewController: UIViewController {
     
     var message: Dictionary<String, Any>?
 
+    @IBOutlet weak var countLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         DNJPushManager.shared.myDelegate = self
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
-            DNJPushManager.shared.setTags(tags: ["10001"], alias: "dn", object: self) { (res, tags, alias) in
-                print(res, tags, alias)
-            }
-        }
-        
+       
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("主动接受的消息: \(message)")
+        
+        DNJPushManager.shared.setTags(tags: ["10001"], alias: "dn", object: self) { (res, tags, alias) in
+            print(res, tags, alias)
+        }
     }
     
 

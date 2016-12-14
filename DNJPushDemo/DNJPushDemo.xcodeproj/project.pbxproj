@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		517EB1241E00D84100E764A8 /* DNPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517EB1231E00D84100E764A8 /* DNPushViewController.swift */; };
 		519EB8EA1DFFC9F0003527FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519EB8E91DFFC9F0003527FD /* AppDelegate.swift */; };
 		519EB8EC1DFFC9F0003527FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519EB8EB1DFFC9F0003527FD /* ViewController.swift */; };
 		519EB8EF1DFFC9F0003527FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519EB8ED1DFFC9F0003527FD /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		517EB1231E00D84100E764A8 /* DNPushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNPushViewController.swift; sourceTree = "<group>"; };
 		519EB8E61DFFC9EF003527FD /* DNJPushDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNJPushDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		519EB8E91DFFC9F0003527FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		519EB8EB1DFFC9F0003527FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				519EB91F1DFFE4EF003527FD /* DNJPushExtension.swift */,
 				519EB9211DFFEE2A003527FD /* DNJPushManager.swift */,
 				519EB8EB1DFFC9F0003527FD /* ViewController.swift */,
+				517EB1231E00D84100E764A8 /* DNPushViewController.swift */,
 				519EB8FB1DFFC9F6003527FD /* Other */,
 				519EB91B1DFFD3C9003527FD /* DNJPushDemo-Bridging-Header.h */,
 			);
@@ -196,6 +199,9 @@
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -240,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				519EB9201DFFE4EF003527FD /* DNJPushExtension.swift in Sources */,
+				517EB1241E00D84100E764A8 /* DNPushViewController.swift in Sources */,
 				519EB8EC1DFFC9F0003527FD /* ViewController.swift in Sources */,
 				519EB9221DFFEE2A003527FD /* DNJPushManager.swift in Sources */,
 				519EB8EA1DFFC9F0003527FD /* AppDelegate.swift in Sources */,
@@ -423,6 +430,7 @@
 				519EB8FA1DFFC9F0003527FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

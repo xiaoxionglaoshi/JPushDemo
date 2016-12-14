@@ -30,6 +30,12 @@ class DNJPushManager: NSObject {
     // 监听接收到的消息
     func didReceiveMessage(_ userInfo: Dictionary<String, Any>) {
         self.myDelegate?.receiveMessage(userInfo)
+        let badge = (userInfo["aps"] as? Dictionary<String, Any>)?["badge"]
+        if let badgeNum = badge as? Int {
+            // 同步badge
+            setBadge(value: badgeNum)
+        }
+        
     }
     
     // MARK: 设置标签
@@ -39,13 +45,21 @@ class DNJPushManager: NSObject {
     }
     
     func tagsAliasCallback(_ iResCode: Int, tags: Set<AnyHashable>!, alias: String!) {
-        print(iResCode, tags, alias)
         guard onTagBlock == nil else {
             return
         }
-        
         let res = iResCode == 0 ? true : false
         self.onTagBlock!(res, tags, alias)
     }
     
+    // MARK: 设置Badge值,存储在JPush服务器上
+    func setBadge(value: Int) {
+        JPUSHService.setBadge(value)
+    }
+    
+    // MARK: 重置Badge值
+    func resetBadge() {
+        JPUSHService.setBadge(0)
+    }
+
 }

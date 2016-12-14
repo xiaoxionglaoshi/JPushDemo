@@ -65,14 +65,12 @@ extension AppDelegate: JPUSHRegisterDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         JPUSHService.handleRemoteNotification(userInfo)
         completionHandler(.newData)
-        print("1. \(userInfo)")
         DNJPushManager.shared.didReceiveMessage(userInfo as! Dictionary<String, Any>)
     }
     
     // iOS 6
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         JPUSHService.handleRemoteNotification(userInfo)
-        print("2. \(userInfo)")
         DNJPushManager.shared.didReceiveMessage(userInfo as! Dictionary<String, Any>)
     }
     
@@ -100,9 +98,10 @@ extension AppDelegate: JPUSHRegisterDelegate {
     
     func networkDidReceiveMessage(_ notification: Notification) {
         let userInfo = notification.userInfo
-//        print(userInfo ?? "收到信息为空")
         DNJPushManager.shared.didReceiveMessage(userInfo as! Dictionary<String, Any>)
     }
+    
+    
     
 }
 
