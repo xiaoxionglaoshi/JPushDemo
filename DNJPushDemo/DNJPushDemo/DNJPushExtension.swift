@@ -101,8 +101,6 @@ extension AppDelegate: JPUSHRegisterDelegate {
         let userInfo = notification.userInfo
         DNJPushManager.shared.didReceiveMessage(userInfo as! Dictionary<String, Any>)
     }
-    
-    
-    
+ 
 }
 

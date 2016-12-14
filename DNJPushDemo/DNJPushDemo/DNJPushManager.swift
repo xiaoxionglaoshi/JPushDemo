@@ -10,7 +10,7 @@ import UIKit
 
 public typealias TagBlock = ((_ res: Bool, _ tags:Set<AnyHashable>, _ alias: String) -> Void)
 
-protocol DNJPushDelegate {
+protocol DNJPushDelegate: class {
     func receiveMessage(_ userInfo: Dictionary<String, Any>)
 }
 
@@ -22,7 +22,7 @@ class DNJPushManager: NSObject {
         return dnJPushManagerShareInstance
     }
     
-    var myDelegate: DNJPushDelegate?
+    weak var myDelegate: DNJPushDelegate?
     
     private var onTagBlock: TagBlock?
     
