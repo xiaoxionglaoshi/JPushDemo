@@ -10,7 +10,6 @@ import UIKit
 
 public typealias TagBlock = ((_ res: Bool, _ tags:Set<AnyHashable>, _ alias: String) -> Void)
 
-
 protocol DNJPushDelegate {
     func receiveMessage(_ userInfo: Dictionary<String, Any>)
 }
@@ -35,7 +34,6 @@ class DNJPushManager: NSObject {
             // 同步badge
             setBadge(value: badgeNum)
         }
-        
     }
     
     // MARK: 设置标签

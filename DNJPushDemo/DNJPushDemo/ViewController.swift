@@ -18,30 +18,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         DNJPushManager.shared.myDelegate = self
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         DNJPushManager.shared.setTags(tags: ["10001"], alias: "dn", object: self) { (res, tags, alias) in
             print(res, tags, alias)
         }
     }
     
-    @objc func ddd() {
-        
-    }
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
 extension ViewController: DNJPushDelegate {
